@@ -48,4 +48,8 @@ return require('packer').startup(function(use)
 	  }
   }
   use('sbdchd/neoformat')
+  -- file explorer
+  use("nvim-tree/nvim-tree.lua")
+  --vs-code like icons
+  use("nvim-tree/nvim-web-devicons")
 end)
