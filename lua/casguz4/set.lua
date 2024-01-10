@@ -1,5 +1,3 @@
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
 vim.opt.guicursor = ""
 
 vim.opt.nu = true
@@ -34,15 +32,7 @@ vim.opt.colorcolumn = "80"
 
 vim.g.mapleader = " "
 
-require("nvim-tree").setup({
-    sort = {
-        sorter = "case_sensitive",
-    },
-    view = {
-        width = 30,
-    },
-    renderer = {
-        group_empty = true,
-    },
-})
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
+require('nvim-tree').setup{}
