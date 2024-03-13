@@ -42,3 +42,4 @@ vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>")
 -- write & quit
 vim.keymap.set("n", "<leader>w", "<cmd>w <CR>")
 vim.keymap.set("n", "<leader>qa", "<cmd>qall <CR>")
+vim.keymap.set("n", "<leader>q", "<cmd>q <CR>")
