@@ -12,11 +12,18 @@ return require('packer').startup(function(use)
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
   use({
+	  "folke/tokyonight.nvim",
+	  as = 'tokyonight',
+	  config = function()
+		  require("tokyonight").setup()
+		  vim.cmd('colorscheme tokyonight')
+	  end
+  })
+  use({
 	  'rose-pine/neovim',
 	  as = 'rose-pine',
 	  config = function()
 		  require("rose-pine").setup()
-		  vim.cmd('colorscheme rose-pine')
 	  end
   })
 
@@ -52,4 +59,41 @@ return require('packer').startup(function(use)
   use("nvim-tree/nvim-tree.lua")
   --vs-code like icons
   use("nvim-tree/nvim-web-devicons")
+  -- install without yarn or npm
+  use({
+      "iamcco/markdown-preview.nvim",
+      run = function() vim.fn["mkdp#util#install"]() end,
+  })
+  use({
+      "epwalsh/obsidian.nvim",
+      tag = "*",  -- recommended, use latest release instead of latest commit
+      requires = {
+          -- Required.
+          "nvim-lua/plenary.nvim",
+      },
+      config = function()
+          require("obsidian").setup({
+              workspaces = {
+                  {
+                      name = "personal",
+                      path = "~/notes/",
+                  }
+              },
+          })
+          vim.opt.conceallevel = 1
+      end,
+  })
+
+  use({
+      "folke/todo-comments.nvim",
+      requires = {
+        {"folke/todo-comments.nvim"}
+      },
+      config = function()
+          require('todo-comments').setup()
+      end,
+  })
+  
+  -- debugger;
+  use('mfussenegger/nvim-dap')
 end)

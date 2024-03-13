@@ -10,7 +10,19 @@ end
 
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
+-- local function my_on_attach(bufnr)
+--     local api = nvim_tree.api
+-- 
+--     local function opts(desc)
+--         return { desc = "nvim-tree:" .. desc, bufnr = bufnr }
+--     end
+-- 
+--     api.config.mappings.default_on_attach(bufnr)
+-- end
+
 nvim_tree.setup {
+-- idk what this function even does so don't enable it lulz
+--    on_attach = my_on_attach,
     update_focused_file = {
         enable = true,
         update_cwd = true,
@@ -55,7 +67,7 @@ nvim_tree.setup {
         },
     },
     view = {
-        width = 30,
+        width = 20,
         side = "left",
         mappings = {
             list = {
