@@ -19,13 +19,6 @@ return require('packer').startup(function(use)
 		  vim.cmd('colorscheme tokyonight')
 	  end
   })
-  use({
-	  'rose-pine/neovim',
-	  as = 'rose-pine',
-	  config = function()
-		  require("rose-pine").setup()
-	  end
-  })
 
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use('nvim-treesitter/playground')

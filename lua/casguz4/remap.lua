@@ -1,5 +1,6 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+-- can't use this while using nvim-tree
+-- vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '>-2<CR>gv=gv")
@@ -10,7 +11,9 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
-vim.keymap.set("x", "<leader>p", "\"_dP")
+-- vim.keymap.set("x", "<leader>p", "\"_dP")
+-- supposedly this is a better paste from yank
+vim.keymap.set({ "n", "x" }, "<leader>p", [["Op]], { desc = "paste from the yank register" })
 
 -- copy to clipboard
 vim.keymap.set("n", "<leader>y", "\"+yy")
@@ -37,7 +40,6 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 vim.keymap.set("n", "<leader>x", "<cmd!chmod +x%<CR>", { silent = true })
 
 vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/casguz4/packer.lua<CR>")
-vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>")
 
 -- write & quit
 vim.keymap.set("n", "<leader>w", "<cmd>w <CR>")
