@@ -89,4 +89,5 @@ return require('packer').startup(function(use)
   
   -- debugger;
   use('mfussenegger/nvim-dap')
+  use("leoluz/nvim-dap-go")
 end)
